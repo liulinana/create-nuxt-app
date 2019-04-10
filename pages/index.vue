@@ -20,7 +20,9 @@
           class="button--grey"
         >GitHub</a>
       </div>
-      <nuxt-link to="/users/one">首页</nuxt-link>
+      <nuxt-link to="/users/one">hello world</nuxt-link>
+      <br/>
+      <nuxt-link to="/users/one/dd">首页</nuxt-link>
       <el-row>
         <el-button>默认按钮</el-button>
         <el-button type="primary">主要按钮</el-button>
