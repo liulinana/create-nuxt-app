@@ -1,0 +1,44 @@
+{
+  "name": "create-nuxt-app",
+  "version": "1.0.0",
+  "description": "My stellar Nuxt.js project",
+  "author": "刘丽娜",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nuxtjs/style-resources": "^0.1.2",
+    "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
+    "iview": "^3.3.3",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.11.0",
+    "nuxt": "^2.6.1",
+    "sass": "^1.18.0",
+    "sass-loader": "^7.1.0",
+    "scss": "^0.2.4",
+    "scss-loader": "^0.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.9",
+    "vue-jest": "^3.0.3"
+  },
+  "config": {
+    "nuxt": {
+      "host": "localhost",
+      "port": "1818"
+    }
+  }
+}
