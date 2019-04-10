@@ -39,6 +39,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+      '~plugins/vue-notifications'
   ],
 
   /*
@@ -70,14 +71,18 @@ export default {
      * 目标将由Nuxt相应地设置（客户端/服务器）。
      * 建议使用默认
      */
-    // babel: {
-    //   presets({ isServer }) {
-    //     const targets = isServer ? { node: 'current' } : { ie: '11' };
-    //     return [
-    //       [ require.resolve('@nuxt/babel-preset-app'), { targets } ,'es2015', 'stage-0', 'vue', 'env']
-    //     ]
-    //   }
-    // },
+    babel: {
+      // presets({ isServer }) {
+      //   const targets = isServer ? { node: 'current' } : { ie: '11' };
+      //   return [
+      //     [ require.resolve('@nuxt/babel-preset-app'), { targets } ,'es2015', 'stage-0', 'vue', 'env']
+      //   ]
+      // },
+      "plugins": [["import", {
+          "libraryName": "iview",
+          "libraryDirectory": "src/components"
+      }]],
+    },
     /*
     ** You can extend webpack config here
     */

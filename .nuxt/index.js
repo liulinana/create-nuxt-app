@@ -6,10 +6,13 @@ import NuxtChild from './components/nuxt-child.js'
 import NuxtError from './components/nuxt-error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
-/* Plugins */
+Vue.use(iView);
 
+/* Plugins */
 // Component: <NoSsr>
 Vue.component(NoSsr.name, NoSsr)
 

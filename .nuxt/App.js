@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from 'vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
 import '../assets/main.scss'
@@ -15,11 +15,9 @@ export default {
         {"name":"viewport","content":"width=device-width, initial-scale=1"},
         {"hid":"description","name":"description","content":"My stellar Nuxt.js project"}
       ],
-    "link":[
-        {"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}
-      ],
-    "style":[],
-    "script":[]
+      "link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],
+      "style":[],
+      "script":[]
   },
 
   render(h, props) {
@@ -30,7 +28,7 @@ export default {
         id: '__layout'
       },
       key: this.layoutName
-    }, [ layoutEl ]);
+    }, [ layoutEl ])
 
     const transitionEl = h('transition', {
       props: {
@@ -45,7 +43,7 @@ export default {
           })
         }
       }
-    }, [ templateEl ]);
+    }, [ templateEl ])
 
     return h('div', {
       domProps: {
@@ -66,13 +64,13 @@ export default {
   },
   created() {
     // Add this.$nuxt in child instances
-    Vue.prototype.$nuxt = this;
+    Vue.prototype.$nuxt = this
     // add to window so we can listen when ready
     if (process.client) {
-      window.$nuxt = this;
-      this.refreshOnlineStatus();
+      window.$nuxt = this
+      this.refreshOnlineStatus()
       // Setup the listeners
-      window.addEventListener('online', this.refreshOnlineStatus);
+      window.addEventListener('online', this.refreshOnlineStatus)
       window.addEventListener('offline', this.refreshOnlineStatus)
     }
     // Add $nuxt.error()
@@ -118,8 +116,8 @@ export default {
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
-      this.layoutName = layout;
-      this.layout = layouts['_' + layout];
+      this.layoutName = layout
+      this.layout = layouts['_' + layout]
       return this.layout
     },
     loadLayout(layout) {
