@@ -11,6 +11,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 /* Plugins */
 
 import nuxt_plugin_elementUI_77019499 from 'nuxt_plugin_elementUI_77019499' // Source: ../plugins/elementUI (mode: 'all')
+import nuxt_plugin_iview_fabcf5d2 from 'nuxt_plugin_iview_fabcf5d2' // Source: ../plugins/iview (mode: 'all')
 
 // Component: <NoSsr>
 Vue.component(NoSsr.name, NoSsr)
@@ -131,6 +132,10 @@ async function createApp(ssrContext) {
 
   if (typeof nuxt_plugin_elementUI_77019499 === 'function') {
     await nuxt_plugin_elementUI_77019499(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_iview_fabcf5d2 === 'function') {
+    await nuxt_plugin_iview_fabcf5d2(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

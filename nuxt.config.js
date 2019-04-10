@@ -39,7 +39,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-      '~plugins/elementUI'
+      '~plugins/elementUI',
+      '~plugins/iview'
   ],
 
   /*
@@ -60,6 +61,10 @@ export default {
   ** Build configuration
   */
   build: {
+      vendor: [
+          'axios',
+          'element-ui'
+      ],
     /**
      * 使用 webpack-bundle-analyzer 分析并可视化构建后的打包文件，你可以基于分析结果来决定如何优化它。
      * 执行语句:yarn build --analyzer 或者 yarn build -a
@@ -79,13 +84,19 @@ export default {
       //   ]
       // },
       "plugins": [
-        [
-            "component",
-            {
-                "libraryName": "element-ui",
-                "styleLibraryName": "theme-chalk"
-            }
-        ]
+        // [
+        //     "component",
+        //     {
+        //         "libraryName": "element-ui",
+        //         "styleLibraryName": "theme-chalk"
+        //     },
+        // ],
+        // [
+        //   {
+        //       "libraryName": "iview",
+        //       "libraryDirectory": "src/components"
+        //   }
+        // ]
       ]
     },
     /*
