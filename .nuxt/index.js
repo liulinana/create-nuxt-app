@@ -10,7 +10,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_vuenotifications_255a642c from 'nuxt_plugin_vuenotifications_255a642c' // Source: ../plugins/vue-notifications (mode: 'all')
+import nuxt_plugin_elementUI_77019499 from 'nuxt_plugin_elementUI_77019499' // Source: ../plugins/elementUI (mode: 'all')
 
 // Component: <NoSsr>
 Vue.component(NoSsr.name, NoSsr)
@@ -129,8 +129,8 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_vuenotifications_255a642c === 'function') {
-    await nuxt_plugin_vuenotifications_255a642c(app.context, inject)
+  if (typeof nuxt_plugin_elementUI_77019499 === 'function') {
+    await nuxt_plugin_elementUI_77019499(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

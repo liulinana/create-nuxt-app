@@ -39,7 +39,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-      '~plugins/vue-notifications'
+      '~plugins/elementUI'
   ],
 
   /*
@@ -75,13 +75,18 @@ export default {
       // presets({ isServer }) {
       //   const targets = isServer ? { node: 'current' } : { ie: '11' };
       //   return [
-      //     [ require.resolve('@nuxt/babel-preset-app'), { targets } ,'es2015', 'stage-0', 'vue', 'env']
+      //     [ require.resolve('@nuxt/babel-preset-app'), { targets }]
       //   ]
       // },
-      "plugins": [["import", {
-          "libraryName": "iview",
-          "libraryDirectory": "src/components"
-      }]],
+      "plugins": [
+        [
+            "component",
+            {
+                "libraryName": "element-ui",
+                "styleLibraryName": "theme-chalk"
+            }
+        ]
+      ]
     },
     /*
     ** You can extend webpack config here
