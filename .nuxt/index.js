@@ -6,13 +6,12 @@ import NuxtChild from './components/nuxt-child.js'
 import NuxtError from './components/nuxt-error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
-import iView from 'iview';
-import 'iview/dist/styles/iview.css';
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
-Vue.use(iView);
-
 /* Plugins */
+
+import nuxt_plugin_vuenotifications_255a642c from 'nuxt_plugin_vuenotifications_255a642c' // Source: ../plugins/vue-notifications (mode: 'all')
+
 // Component: <NoSsr>
 Vue.component(NoSsr.name, NoSsr)
 
@@ -105,7 +104,34 @@ async function createApp(ssrContext) {
     ssrContext
   })
 
+  const inject = function (key, value) {
+    if (!key) throw new Error('inject(key, value) has no key provided')
+    if (typeof value === 'undefined') throw new Error('inject(key, value) has no value provided')
+    key = '$' + key
+    // Add into app
+    app[key] = value
+
+    // Check if plugin not already installed
+    const installKey = '__nuxt_' + key + '_installed__'
+    if (Vue[installKey]) return
+    Vue[installKey] = true
+    // Call Vue.use() to install the plugin into vm
+    Vue.use(() => {
+      if (!Vue.prototype.hasOwnProperty(key)) {
+        Object.defineProperty(Vue.prototype, key, {
+          get() {
+            return this.$root.$options[key]
+          }
+        })
+      }
+    })
+  }
+
   // Plugin execution
+
+  if (typeof nuxt_plugin_vuenotifications_255a642c === 'function') {
+    await nuxt_plugin_vuenotifications_255a642c(app.context, inject)
+  }
 
   // If server-side, wait for async component to be resolved first
   if (process.server && ssrContext && ssrContext.url) {
