@@ -1,24 +1,36 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import NuxtLoading from './components/nuxt-loading.vue'
 
 import '../assets/main.scss'
 
 import _6f6c098b from '../layouts/default.vue'
 
-const layouts = { "_default": _6f6c098b }
+const layouts = { "_default": _6f6c098b };
 
 export default {
-  head: {"title":"create-nuxt-app","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My stellar Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+  head: {
+    "title":"create-nuxt-app",
+    "meta":[
+        {"charset":"utf-8"},
+        {"name":"viewport","content":"width=device-width, initial-scale=1"},
+        {"hid":"description","name":"description","content":"My stellar Nuxt.js project"}
+      ],
+    "link":[
+        {"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}
+      ],
+    "style":[],
+    "script":[]
+  },
 
   render(h, props) {
-    const loadingEl = h('NuxtLoading', { ref: 'loading' })
-    const layoutEl = h(this.layout || 'nuxt')
+    const loadingEl = h('NuxtLoading', { ref: 'loading' });
+    const layoutEl = h(this.layout || 'nuxt');
     const templateEl = h('div', {
       domProps: {
         id: '__layout'
       },
       key: this.layoutName
-    }, [ layoutEl ])
+    }, [ layoutEl ]);
 
     const transitionEl = h('transition', {
       props: {
@@ -33,7 +45,7 @@ export default {
           })
         }
       }
-    }, [ templateEl ])
+    }, [ templateEl ]);
 
     return h('div', {
       domProps: {
@@ -54,13 +66,13 @@ export default {
   },
   created() {
     // Add this.$nuxt in child instances
-    Vue.prototype.$nuxt = this
+    Vue.prototype.$nuxt = this;
     // add to window so we can listen when ready
     if (process.client) {
-      window.$nuxt = this
-      this.refreshOnlineStatus()
+      window.$nuxt = this;
+      this.refreshOnlineStatus();
       // Setup the listeners
-      window.addEventListener('online', this.refreshOnlineStatus)
+      window.addEventListener('online', this.refreshOnlineStatus);
       window.addEventListener('offline', this.refreshOnlineStatus)
     }
     // Add $nuxt.error()
@@ -95,19 +107,19 @@ export default {
 
     errorChanged() {
       if (this.nuxt.err && this.$loading) {
-        if (this.$loading.fail) this.$loading.fail()
+        if (this.$loading.fail) this.$loading.fail();
         if (this.$loading.finish) this.$loading.finish()
       }
     },
 
     setLayout(layout) {
-      if(layout && typeof layout !== 'string') throw new Error('[nuxt] Avoid using non-string value as layout property.')
+      if(layout && typeof layout !== 'string') throw new Error('[nuxt] Avoid using non-string value as layout property.');
 
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
-      this.layoutName = layout
-      this.layout = layouts['_' + layout]
+      this.layoutName = layout;
+      this.layout = layouts['_' + layout];
       return this.layout
     },
     loadLayout(layout) {
