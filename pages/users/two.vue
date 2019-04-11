@@ -20,8 +20,8 @@
         methods: {
             reqAxios () {
                 // this.$Message.error('This is a info tip');
-                api.get(`/dd`);
-
+                // api.get(`/api/dd`);
+                // this.$axios.$get('http://icanhazip.com')
             },
             count () {
                 increaseCounter("INCREASE",10);

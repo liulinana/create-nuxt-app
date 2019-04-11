@@ -75,9 +75,9 @@ export default {
   },
   proxy: {
       '/api/': {
-        target: 'http://localhost:8080',
+        target: 'http://icanhazip.com',
         changeOrigin: true,
-        pathRewrite: {'^/api/': ''}
+        pathRewrite: {'^/api/': 'aa'}
       }
   },
   styleResources: {
