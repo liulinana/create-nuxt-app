@@ -4,11 +4,13 @@
         <nuxt-link to="/users/one">hello world</nuxt-link>
         {{aa}}
         <Button type="primary" @click="count">vuex</Button>
+        <Button type="primary" @click="reqAxios">axios</Button>
     </div>
 </template>
 <script>
     import {increaseCounter} from '../../store/actions';
-    import store from '../../store/index'
+    import store from '../../store/index';
+    import api from '../../plugins/axios'
     export default {
         computed: {
             aa () {
@@ -16,14 +18,14 @@
             },
         },
         methods: {
+            reqAxios () {
+                // this.$Message.error('This is a info tip');
+                api.get(`/dd`);
+
+            },
             count () {
-                // this.$store.dispatch("INCREASE")
-                // store.dispatch("increaseCounter")
                 increaseCounter("INCREASE",10);
-                console.log("withRouter",this.props)
-                // store.commit("INCREASE",{
-                //     amount: 10
-                // })
+                // store().commit("INCREASE",10)
             },
             sendParams () {
                 this.$router.push({

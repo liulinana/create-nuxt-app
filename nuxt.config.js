@@ -57,7 +57,8 @@ export default {
   */
   plugins: [
       '~plugins/elementUI',
-      '~plugins/iview'
+      '~plugins/iview',
+      '~/plugins/axios'
   ],
 
   /*
@@ -69,7 +70,21 @@ export default {
    */
   modules: [
     '@nuxtjs/style-resources',
+    '@nuxtjs/axios',
   ],
+  axios: {
+      proxy: true,
+      prefix: '/api', // baseURL, prefix 是设置接口前缀，没有前缀可以去掉。
+      credentials: true,
+      // baseURL: 'https://cnodejs.org/api/v1',
+  },
+  proxy: {
+      '/api/': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        pathRewrite: {'^/api/': ''}
+      }
+  },
   styleResources: {
     scss: './assets/main.scss',
     less: './assets/**/*.less',
