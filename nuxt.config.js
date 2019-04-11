@@ -43,13 +43,8 @@ export default {
   ** Global CSS
   */
   css: [
-    // 直接加载一个 Node.js 模块。（在这里它是一个 Sass 文件）
-    // 'bulma',
-    // 项目里要用的 CSS 文件
-    // '@/assets/css/style.css',
-    // 项目里要使用的 SCSS 文件
     '@/assets/main.scss',
-      'assets/style.css',
+    '@/assets/style.css',
   ],
 
   /*
