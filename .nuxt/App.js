@@ -3,16 +3,18 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '../assets/main.scss'
 
+import '../assets/style.css'
+
 import _6f6c098b from '../layouts/default.vue'
 
-const layouts = { "_default": _6f6c098b }
+const layouts = { "_default": _6f6c098b };
 
 export default {
   head: {"title":"create-nuxt-app","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My stellar Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
   render(h, props) {
-    const loadingEl = h('NuxtLoading', { ref: 'loading' })
-    const layoutEl = h(this.layout || 'nuxt')
+    const loadingEl = h('NuxtLoading', { ref: 'loading' });
+    const layoutEl = h(this.layout || 'nuxt');
     const templateEl = h('div', {
       domProps: {
         id: '__layout'

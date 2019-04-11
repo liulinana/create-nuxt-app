@@ -1,6 +1,6 @@
 <template>
   <div class="VueToNuxtLogo">
-
+反反复复付付付付
   </div>
 </template>
 <script>
