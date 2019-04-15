@@ -9,8 +9,8 @@
 </template>
 <script>
     import {increaseCounter} from '../../store/actions';
-    import store from '../../store/index';
-    import api from '../../plugins/axios'
+    import store from '~/store/index';
+    import api from '~/plugins/axios'
     export default {
         computed: {
             aa () {
@@ -20,7 +20,7 @@
         methods: {
             reqAxios () {
                 // this.$Message.error('This is a info tip');
-                // api.get(`/api/dd`);
+                api.get(`/api/dd`);
                 // this.$axios.$get('http://icanhazip.com')
             },
             count () {
